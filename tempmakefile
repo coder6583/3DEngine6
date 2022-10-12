@@ -1,0 +1,22 @@
+CC = gcc
+CXX = g++
+CFLAGS = -g -Wall -Wextra -std=c99 -pedantic
+CXXFLAGS = -g -Wall -std=c++11
+CFLAGS += $(shell pkg-config --cflags gtk+-2.0)
+LDFLAGS += $(shell pkg-config --libs gtk+-2.0)
+CFILES = $(wildcard *.c)
+OBJFILES = $(CFILES:.c=.o) 
+LDLIBS = -lGL \
+         -lglfw \
+         -lGLEW \
+         -lSOIL \
+         -lassimp
+OBJECTS = $(patsubst %.cpp,%.o,$(wildcard *.cpp))
+TARGET = sample
+$(CC) $(CFILES) $(CFLAGS) -o $(OBJFILES)
+$(CXX) $^ $(CXXFLAGS) -o $(OBJECTS) $(LDLIBS) $(TARGET)
+
+.PHONY : clean
+clean :
+	-${RM} ${TARGET} ${OBJECTS} *~ .*~ core
+	

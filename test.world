@@ -1,0 +1,4 @@
+gravity: 0 -9.8 0 
+number: 2 
+Cube: none -0.0194963 0.999971 -0.0107785 0.5 0 0 1 1 0 0 0.000690534 CUBE 1 
+Body55.stl: /home/thedude6583/Desktop/C++Projects/3DEngine5/Body55.stl -64.2543 -25.0029 -7.5434 0.5 0 0 1 -0.0435876 -0.0443549 0.998065 1.59965 MODEL  
